@@ -17,7 +17,7 @@ class CalcPrimos (Screen):
                     self.ids.saida.text = resultado
                     return
                 else:
-                    self.ids.input_field.error = "Insira um numero maior que 1"
+                    self.ids.input.error = "Insira um numero maior que 1"
                     return
             
             except ValueError:
