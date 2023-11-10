@@ -1,0 +1,109 @@
+<CalcPrimos>:
+    
+    # BG
+
+    FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 0.2,0.2,0.2,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    # TIULO    
+
+        FloatLayout:
+            MDCard:
+                orientation: "vertical"
+                md_bg_color: 0.1, 0.1, 0.1, 1
+                size_hint: 1, 0.2
+                pos_hint: {'center_x': 0.5, 'center_y': 0.90}
+                elevation: 4
+                shadow_softness: 6
+                shadow_offset: (0, 2)
+                radius: [0, 0, 0, 0]
+            FloatLayout:
+                MDLabel:
+                    orientation: "vertical"
+                    text: "Números Primos"
+                    font_name: "Roboto"
+                    theme_text_color: "Custom"
+                    text_color: 255/255, 87/255, 34/255, 1
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.90}
+                    halign: "center"
+                    font_size: "45sp"
+                    bold: True
+
+    # INPUT 
+
+        MDCard:
+            orientation: "vertical"
+            md_bg_color: 0.1, 0.1, 0.1, 1
+            size_hint: (0.5, None)
+            size: ("300dp", "120dp")
+            pos_hint: {'center_x': 0.5, 'center_y': 0.6}
+            elevation: 3
+            shadow_softness: 6
+            shadow_offset: (3, -4)
+            
+            FloatLayout:    
+                
+                MDLabel:
+                    orientation: "vertical"
+                    text: "Insira um número:"
+                    font_name: "Roboto"
+                    theme_text_color: "Custom"
+                    text_color: 255/255, 87/255, 34/255, 1
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.80}
+                    halign: "center"
+                    font_size: "15sp"
+                    bold: True
+                
+                MDTextField:
+                    id: input
+                    hint_text: ""
+                    line_color_normal: 255/255, 87/255, 34/255, 1
+                    text_color: 1,1,1,1
+                    size_hint: (0.7, None)
+                    pos_hint: {'center_x': 0.5, 'y': 0.38}
+                    font_name: 'Roboto'
+                    multiline: False
+                    input_filter: "int"
+                    helper_text: ""
+                    helper_text_color: 1, 0, 0, 1
+
+
+                MDRaisedButton:
+                    text: "Enter"
+                    size_hint: (None, None)
+                    size: ("200dp", "80dp")
+                    pos_hint: {'center_x': 0.5, 'y': 0.1}
+                    on_press: root.analisar()
+                    background_color: 255/255, 87/255, 34/255, 1
+                    font_name: 'Roboto'
+                    elevation_normal: (1,-2)
+
+    # SAÍDA DE DADOS
+
+    ScrollView:
+        size_hint: (1, 0.40)
+        height: self.height
+        pos_hint: {'center_x': 0.5, 'y': 0.02}
+        always_overscroll: False
+        
+        TextInput:
+            id: saida
+            text: "" 
+            readonly: True
+            background_color: 0.2,0.2,0.2,1
+            foreground_color: 1, 1, 1, 1
+            font_size: "20sp"
+            size_hint_y: None
+            height: self.minimum_height
+
+            
+
+
+
+
+
